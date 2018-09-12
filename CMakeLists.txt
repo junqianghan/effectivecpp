@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.7)
+project(effectivecpp)
+
+set(CMAKE_CXX_STANDARD 11)
+
+set(SOURCE_FILES main.cpp)
+add_executable(effectivecpp ${SOURCE_FILES})
+
+
+#add_executable(01 01.cpp)
+#add_executable(03 03.cpp)
+add_executable(04 04.cpp)
