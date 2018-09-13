@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.7)
 project(effectivecpp)
 
 set(CMAKE_CXX_STANDARD 11)
-
+SET(GCC_COVERAGE_COMPILE_FLAGS "-std=c++11")
+add_definitions(${GCC_COVERAGE_COMPILE_FLAGS})
 set(SOURCE_FILES main.cpp)
 add_executable(effectivecpp ${SOURCE_FILES})
 
