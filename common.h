@@ -26,4 +26,13 @@ struct ListNode
 void printList(ListNode *phead);
 ListNode* listInitial(int *p_data, unsigned length);
 void listDestroy(ListNode* pHead);
+
+
+struct BinaryTreeNode
+{
+    int m_nValue;
+    BinaryTreeNode* m_pLeft;
+    BinaryTreeNode* m_pRight;
+    BinaryTreeNode(int value):m_nValue(value),m_pLeft(nullptr),m_pRight(nullptr){}
+};
 #endif //EFFECTIVECPP_COMMON_H
