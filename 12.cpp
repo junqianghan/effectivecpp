@@ -1,6 +1,8 @@
 #include "common.h"
 #include <cstring>
 
+
+//回溯法
 bool hasPathCore(
     const char* matrix,
     int rows,
