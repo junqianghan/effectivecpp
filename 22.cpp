@@ -5,7 +5,7 @@ struct ListNode
 {
     int m_nValue;
     ListNode* m_pNext;
-    ListNode(int value):m_nValue(value){}
+    ListNode(int value):m_nValue(value),m_pNext(nullptr){}
 };
 
 ListNode* FindKthToTail(ListNode* pListHead, unsigned k)
@@ -39,7 +39,14 @@ ListNode* FindKthToTail(ListNode* pListHead, unsigned k)
 
 int main(int argc, char const *argv[])
 {
-    
+    ListNode p1(1),p2(2),p3(3),p4(4),p5(5);
+    p1.m_pNext = &p2;
+    p2.m_pNext = &p3;
+    p3.m_pNext = &p4;
+    p4.m_pNext = &p5;
+
+    ListNode* p = FindKthToTail(&p1,4);
+    cout<<p->m_nValue<<endl;
 
 
     return 0;

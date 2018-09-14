@@ -14,4 +14,16 @@
 
 using namespace std;
 
+
+struct ListNode
+{
+    int m_nValue;
+    ListNode* m_pNext;
+    ListNode(int value):m_nValue(value),m_pNext(nullptr){}
+};
+
+//List api
+void printList(ListNode *phead);
+ListNode* listInitial(int *p_data, unsigned length);
+void listDestroy(ListNode* pHead);
 #endif //EFFECTIVECPP_COMMON_H
