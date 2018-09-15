@@ -4,7 +4,7 @@ project(effectivecpp)
 set(CMAKE_CXX_STANDARD 11)
 SET(GCC_COVERAGE_COMPILE_FLAGS "-std=c++11")
 add_definitions(${GCC_COVERAGE_COMPILE_FLAGS})
-set(SOURCE_FILES 28.cpp common.cpp)
+set(SOURCE_FILES 32.cpp common.cpp)
 add_executable(main ${SOURCE_FILES})
 
 

@@ -11,6 +11,7 @@
 #include <memory>
 #include <string>
 #include <iterator>
+#include <stack>
 
 using namespace std;
 
@@ -28,6 +29,7 @@ ListNode* listInitial(int *p_data, unsigned length);
 void listDestroy(ListNode* pHead);
 
 
+//BinaryTree api
 struct BinaryTreeNode
 {
     int m_nValue;
@@ -35,4 +37,6 @@ struct BinaryTreeNode
     BinaryTreeNode* m_pRight;
     BinaryTreeNode(int value):m_nValue(value),m_pLeft(nullptr),m_pRight(nullptr){}
 };
+void Serialize(BinaryTreeNode* pRoot, ostream& stream);
+void Deserialize(BinaryTreeNode **pRoot, istream& stream);
 #endif //EFFECTIVECPP_COMMON_H

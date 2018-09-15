@@ -4,6 +4,11 @@
 
 #include "common.h"
 
+
+/**
+ * 链表api
+ * @param phead
+ */
 void printList(ListNode *phead)
 {
     ListNode *p = phead;
@@ -42,5 +47,54 @@ void listDestroy(ListNode* pHead)
     {
         delete p;
         p = p->m_pNext;
+    }
+}
+
+
+void Serialize(BinaryTreeNode* pRoot, ostream& stream)
+{
+    if(pRoot== nullptr)
+    {
+        stream<<"$,";
+        return;
+    }
+    stream<<pRoot->m_nValue<<",";
+
+    Serialize(pRoot->m_pLeft,stream);
+    Serialize(pRoot->m_pRight,stream);
+}
+
+
+bool ReadStream(istream& stream,int& number)
+{
+    char ch;
+    stream>>ch;
+    if(ch == '$')
+    {
+        stream>>ch;
+        return false;
+    }
+    else if(ch == ' ')
+    {
+        return false;
+    }
+    else
+    {
+        stream.unget();
+        stream>>number;
+        stream>>ch;
+        return true;
+    }
+}
+
+
+void Deserialize(BinaryTreeNode **pRoot, istream& stream)
+{
+    int number=0;
+    if(ReadStream(stream,number))
+    {
+        *pRoot = new BinaryTreeNode(number);
+        Deserialize(&((*pRoot)->m_pLeft),stream);
+        Deserialize(&((*pRoot)->m_pRight),stream);
     }
 }
