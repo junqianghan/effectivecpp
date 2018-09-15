@@ -24,3 +24,5 @@ add_executable(main ${SOURCE_FILES})
 #add_executable(21 21.cpp)
 #add_executable(22 22.cpp)
 #add_executable(24 24.cpp)
+
+add_executable(sort sort.cpp)
