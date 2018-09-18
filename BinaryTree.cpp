@@ -92,7 +92,8 @@ BinaryTreeNode* GetLastCommonAncestor(
 
 int main(int argc, char const *argv[])
 {
-    BinaryTreeNode p1(1),p2(2),p3(3),p4(4),p5(5),p6(6),p7(7),p8(8),p9(9);
+    BinaryTreeNode p0(0),p1(1),p2(2),p3(3),p4(4),p5(5),p6(6),p7(7),p8(8),p9(9);
+    p0.m_pLeft = &p1;
     p1.m_pLeft = &p2;
     p1.m_pRight = &p3;
 
@@ -105,9 +106,9 @@ int main(int argc, char const *argv[])
     p4.m_pLeft = &p8;
     p6.m_pLeft = &p9;
 
-    cout<<BinaryWidth(&p1)<<endl;
-    cout<<BinaryDepth(&p1)<<endl;
+    cout<<BinaryWidth(&p0)<<endl;
+    cout<<BinaryDepth(&p0)<<endl;
 
-    cout<<GetLastCommonAncestor(&p1,&p4,&p9)->m_nValue<<endl;
+    cout<<GetLastCommonAncestor(&p0,&p4,&p8)->m_nValue<<endl;
     return 0;
 }
