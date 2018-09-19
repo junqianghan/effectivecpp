@@ -32,4 +32,5 @@ add_definitions(${GCC_COVERAGE_COMPILE_FLAGS})
 #
 #add_executable(BinaryTree BinaryTree.cpp common.cpp)
 
-add_executable(merge_sort merge_sort.cpp)
+#add_executable(merge_sort merge_sort.cpp)
+add_executable(LRU LRU.cpp)
