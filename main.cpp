@@ -1,24 +1,26 @@
 #include <iostream>
-#include <sstream>
-#include "common.h"
-//
+#include <algorithm>
+using namespace std;
 int main()
 {
-    BinaryTreeNode p1(1),p2(2),p3(3);
-    p1.m_pLeft = &p2;
-    p1.m_pRight = &p3;
-
-    ostringstream os;
-    Serialize(&p1,os);
-    cout<<os.str()<<endl;
-
-    istringstream is(os.str());
-    BinaryTreeNode *pRoot;
-    Deserialize(&pRoot,is);
-
-
-
-
+    int n;
+    cin>>n;
+    string s("");
+    while(n>0)
+    {
+        if(n%2 == 1)
+        {
+            s.push_back('2');
+            n=(n-1)/2;
+        }
+        else
+        {
+            s.push_back('3');
+            n=(n-2)/2;
+        }
+    }
+    reverse(s.begin(),s.end());
+    cout<<s<<endl;
     return 0;
 }
 

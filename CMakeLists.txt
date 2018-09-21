@@ -34,3 +34,4 @@ add_definitions(${GCC_COVERAGE_COMPILE_FLAGS})
 
 #add_executable(merge_sort merge_sort.cpp)
 add_executable(LRU LRU.cpp)
+add_executable(main main.cpp)
