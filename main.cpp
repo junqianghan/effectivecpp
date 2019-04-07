@@ -1,26 +1,31 @@
 #include <iostream>
-#include <algorithm>
+
 using namespace std;
+
 int main()
-{
-    int n;
-    cin>>n;
-    string s("");
-    while(n>0)
+{   int n,k;
+    cout<<"输入n,k"<<endl;
+    cin>>n>>k;
+    int a[100];
+    cout<<"输入距离"<<endl;
+    for(int i=1;i<=k+1;i++)
     {
-        if(n%2 == 1)
+        cin>>a[i];
+    }
+    int count=0;
+    int sum=0;
+    for(int i=1;i<=k+1;i++)
+    {
+        sum+=a[i];
+        if(sum>=n)
         {
-            s.push_back('2');
-            n=(n-1)/2;
-        }
-        else
-        {
-            s.push_back('3');
-            n=(n-2)/2;
+            sum=a[i];
+            count++;
+            cout<<"======="<<endl;
+            cout<<"第"<<count <<"次加油的位置："<<a[i-1]<<endl;
         }
     }
-    reverse(s.begin(),s.end());
-    cout<<s<<endl;
+
+    cout << "总共加油："<<count<<"次"<< endl;
     return 0;
 }
-
